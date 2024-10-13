@@ -1,0 +1,1106 @@
+/* Import Custom Fonts */
+@font-face {
+    font-family: 'WilliamBurns';
+    src: url('assets/fonts/WilliamBurns.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'WilliamBurns', sans-serif; /* Apply the new font globally */
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #ffffff; /* Default text color set to white for sections with blue/black backgrounds */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'WilliamBurns';
+}
+
+p {
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.logo {
+    max-width: 400px;
+    height: auto;
+}
+
+/* Hero Section */
+.hero-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Owl Moon', cursive;
+    z-index: 3;
+    animation: fadeInText 2s ease-in-out;
+    line-height: 1.2;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+/* Overlays */
+.section-overlay {
+    position: absolute;
+    width: 100%;    /* Ensures the image spans the full width */
+    left: 0;        /* Aligns the image to the left edge */
+    right: 0;       /* Aligns the image to the right edge */
+    height: auto;   /* Maintains the aspect ratio */
+    z-index: 2;     /* Ensure it sits above the background but below content */
+}
+
+.top-section-overlay {
+    top: 0;
+}
+
+.bottom-section-overlay {
+    bottom: 0;
+}
+
+/* Background Colors */
+.blue-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 138, 171);
+    z-index: -2;
+}
+
+/* Floating Blob Menu */
+.blob-menu {
+    position: relative;
+    width: 100%;
+    max-width: 1024px; /* Max width for desktop */
+    height: 480px; /* Increased height for larger blobs */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    margin: 0 auto; /* Center the blob menu */
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+/* Blob Items */
+.blob-item {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    animation: subtleFloat 10s ease-in-out infinite;
+    width: 316.8px; /* 264px * 1.2 (20% increase) */
+    height: 316.8px; /* 264px * 1.2 (20% increase) */
+}
+
+.blob-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block; /* Fix 1px white lines */
+}
+
+.blob-item:hover {
+    transform: scale(1.1); /* Slight hover effect */
+}
+
+/* Specific Blob Styles */
+.blob-why, .blob-what, .blob-how, .blob-who, .blob-where {
+    width: 316.8px; /* Default size */
+    height: 316.8px;
+    animation-duration: 12s; /* Default duration */
+}
+
+.blob-why {
+    top: 10px;
+    left: 15%;
+    animation: floatLeft 12s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+
+.blob-what {
+    top: 190px;
+    left: 10%;
+    transform: translateX(-10px);
+    animation: floatRight 11s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.blob-how {
+    width: 288px; /* 240px * 1.2 */
+    height: 288px;
+    top: 120px;
+    left: 40%;
+    transform: translateX(-10px);
+    animation: floatRight 14s ease-in-out infinite;
+    animation-delay: 0.4s;
+}
+
+.blob-who {
+    width: 345.6px; /* 288px * 1.2 */
+    height: 345.6px;
+    top: 17px;
+    left: 62%;
+    animation: subtleFloat 10s ease-in-out infinite;
+    animation-delay: 0.6s;
+}
+
+.blob-where {
+    top: 190px;
+    left: 70%;
+    transform: translateX(-10px);
+    animation: floatLeft 13s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+/* Animations */
+@keyframes subtleFloat {
+    0%, 100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    25% {
+        transform: translate(5px, -5px) scale(1.03); 
+    }
+    50% {
+        transform: translate(-5px, 5px) scale(1);
+    }
+    75% {
+        transform: translate(5px, 5px) scale(0.98);
+    }
+}
+
+@keyframes floatLeft {
+    0%, 100% {
+        transform: translateX(-10px) translateY(0);
+    }
+    50% {
+        transform: translateX(-10px) translateY(-5px);
+    }
+}
+
+@keyframes floatRight {
+    0%, 100% {
+        transform: translateX(-10px) translateY(0);
+    }
+    50% {
+        transform: translateX(0px) translateY(5px);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Why and How Sections */
+.why-section, .how-section {
+    position: relative;
+    background-color: rgb(0, 138, 171); /* Blue background */
+    color: #ffffff;
+    padding: 100px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.how-section {
+    background-color: rgb(0, 138, 171); /* Same blue background */
+}
+
+.why-content, .how-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    font-family: 'Owl Moon', cursive; /* Hand-drawn aesthetic */
+}
+
+.why-left, .how-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.why-left h2, .how-left h2 {
+    font-size: 6rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Hand-drawn style */
+}
+
+.why-right, .how-right {
+    flex: 2;
+    padding-left: 20px;
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.why-right p, .how-right p {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.why-right p:nth-child(1), .how-right p:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.why-right p:nth-child(2), .how-right p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.why-right p:nth-child(3), .how-right p:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Who Section */
+.who-section {
+    position: relative;
+    padding: 100px 50px;
+    background-color: #ffffff;
+    text-align: left;
+    color: #333333;
+    overflow: hidden;
+}
+
+.who-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Hand-drawn aesthetic */
+}
+
+.who-section p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #555555;
+}
+
+.who-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.who-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Ensures vertical stacking */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 20px;
+}
+
+.who-left h2 {
+    font-size: 6rem;
+    color: #333333;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Hand-drawn style */
+}
+
+.who-right {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.who-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.who-section input, 
+.who-section textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.who-section textarea {
+    resize: vertical;
+    height: 180px;
+}
+
+.who-section input::placeholder, 
+.who-section textarea::placeholder {
+    font-family: 'Owl Moon', cursive;
+    color: #999999;
+}
+
+.who-section button {
+    padding: 35px 30px;
+    border: none;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white; /* Initial background color */
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-family: 'Owl Moon', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.who-section button:hover {
+    background-color: rgba(0, 118, 151, 0.8); /* Fallback color on hover */
+}
+
+.who-section button::before {
+    content: none; /* Removed duplicate text */
+}
+
+.placeholder-text {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #555555;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.who-section .bottom-section-overlay {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* What Section */
+.what-section {
+    position: relative;
+    background-color: #000000;
+    padding: 100px 50px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.what-section h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Hand-drawn aesthetic */
+}
+
+.work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.work-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.blob-video {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.blob-video img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block; /* Fix 1px white lines */
+}
+
+.work-item h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Work Item Sizes */
+.work-item-small {
+    width: 360px; /* 300px * 1.2 */
+}
+
+.work-item-medium {
+    width: 432px; /* 360px * 1.2 */
+}
+
+.work-item-large {
+    width: 504px; /* 420px * 1.2 */
+}
+
+/* Where Section */
+.where-section {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 50px;
+    overflow: hidden; /* Ensures no part of the image gets cut off */
+}
+
+.where-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Hand-drawn aesthetic */
+}
+
+.where-section p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #dddddd;
+}
+
+/* Video Overlay */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.video-overlay.active {
+    display: flex;
+}
+
+.video-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close-video {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.play-pause-video {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('../images/button.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* Responsive Design Adjustments */
+
+/* Tablets and Smaller Desktops */
+@media (max-width: 1024px) {
+    /* Blob Positions */
+    .blob-how {
+        top: 180px;
+        left: 33%;
+        transform: translateX(-10px);
+    }
+
+    .blob-what {
+        top: 200px;
+        left: 3%;
+        transform: translateX(-10px);
+    }
+
+    .blob-where {
+        left: 60%;
+        transform: translateX(-10px);
+    }
+
+    /* Why and How Sections */
+    .why-left h2, .how-left h2 {
+        font-size: 4rem;
+    }
+
+    .why-right, .how-right {
+        font-size: 1.4rem;
+    }
+
+    .why-right p, .how-right p {
+        font-size: 1.2rem;
+    }
+
+    /* Work Grid */
+    .work-grid {
+        gap: 20px;
+    }
+
+    .work-item-small {
+        width: 432px; /* Adjusted for better fit */
+    }
+
+    .work-item-medium, .work-item-large {
+        width: 504px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    /* Blob Menu */
+    .blob-menu {
+        height: 670px; /* Increased height for better stacking */
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .blob-item {
+        width: 201.6px; /* 168px * 1.2 for larger blobs on mobile */
+        height: 201.6px;
+        margin-bottom: 20px;
+        position: static; /* Remove absolute positioning */
+        animation: none; /* Disable animations for better performance on mobile */
+    }
+
+    /* Stacked Blobs with Slight Offsets */
+    .blob-why {
+        transform: translate(-10%, -10%);
+    }
+
+    .blob-how {
+        transform: translate(10%, -10%);
+    }
+
+    .blob-who {
+        transform: translate(-10%, 10%);
+    }
+
+    .blob-where {
+        transform: translate(10%, 10%);
+    }
+
+    .blob-what {
+        transform: translate(0%, 0%);
+    }
+
+    .blob-item img {
+        margin: 0 auto; /* Center the images */
+    }
+
+    /* Why and How Sections */
+    .why-section, .how-section {
+        padding: 50px 20px;
+        height: auto; /* Remove fixed height on mobile */
+    }
+
+    .why-left h2, .how-left h2 {
+        font-size: 3rem;
+    }
+
+    .why-right, .how-right {
+        font-size: 1.2rem;
+    }
+
+    .why-right p, .how-right p {
+        margin-bottom: 15px;
+    }
+
+    /* Who Section */
+    .who-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .who-section p {
+        font-size: 1.2rem;
+    }
+
+    /* Where Section */
+    .where-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .where-section p {
+        font-size: 1.2rem;
+    }
+
+    /* Work Grid */
+    .work-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-item-small, .work-item-medium, .work-item-large {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Video Overlay Controls */
+    .play-pause-video {
+        bottom: -70px;
+    }
+}
+.where-section {
+    width: 100vw; /* Full viewport width */
+    background-color: #000000; /* Black background */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 50px;
+    margin: 0; /* Remove any margin */
+    overflow: hidden; /* Ensures the background spans fully */
+}
+
+/* Ensure the container isn't limiting the width */
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.section-overlay {
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+}
+/* Make sure the container spans the full width of the viewport */
+.container {
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove padding */
+}
+
+/* Make sure the where-section also spans the full width */
+.where-section {
+    width: 100vw; /* Full viewport width */
+    background-color: #000000; /* Black background */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 50px;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Ensures the black background spans fully */
+}
+* {
+    box-sizing: border-box;
+}
+.where-section {
+    width: 100vw; /* Full viewport width */
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 50px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+/* Black Top SVG Divider */
+.black-top {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/* ... (previous CSS code remains unchanged) ... */
+
+/* Who Section */
+.who-section {
+    position: relative;
+    padding: 100px 50px;
+    background-color: #ffffff;
+    text-align: left;
+    color: #333333;
+    overflow: hidden;
+}
+
+.who-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Hand-drawn aesthetic */
+}
+
+.who-section p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #555555;
+}
+
+.who-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.who-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 20px;
+}
+
+.who-left h2 {
+    font-size: 6rem;
+    color: #333333;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Hand-drawn style */
+}
+
+.who-right {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.who-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.who-section input, 
+.who-section textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.who-section textarea {
+    resize: vertical;
+    height: 180px;
+}
+
+.who-section input::placeholder, 
+.who-section textarea::placeholder {
+    font-family: 'Owl Moon', cursive;
+    color: #999999;
+}
+
+.who-section button {
+    padding: 35px 30px;
+    border: none;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white; /* Initial background color */
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-family: 'Owl Moon', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.who-section button:hover {
+    background-color: rgba(0, 118, 151, 0.8); /* Fallback color on hover */
+}
+
+.who-section button::before {
+    content: none; /* Removed duplicate text */
+}
+
+}
+
+.placeholder-text {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #555555;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Updated CSS for the bottom-section-overlay */
+.who-section .bottom-section-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1; /* Adjust z-index if necessary */
+}
+
+.who-section .bottom-section-overlay img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ... (rest of your CSS code remains unchanged) ... */
+/* Who Section */
+.who-section {
+    position: relative;
+    padding: 100px 50px;
+    background-color: #ffffff;
+    text-align: left;
+    color: #333333;
+    overflow: hidden;
+}
+
+.who-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Hand-drawn aesthetic */
+}
+
+.who-section p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #555555;
+}
+
+.who-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.who-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Ensures vertical stacking */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 20px;
+}
+
+.who-left h2 {
+    font-size: 6rem;
+    color: #333333;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Hand-drawn style */
+}
+
+.who-right {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.who-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Updated Input and Textarea Styles */
+.who-section input, 
+.who-section textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none; /* Removed border */
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: 300; /* Light weight for Helvetica Light */
+    background-color: #f0f0f0; /* Slightly gray background */
+    color: #000000; /* Black text */
+}
+
+.who-section textarea {
+    resize: vertical;
+    height: 180px;
+}
+
+/* Updated Placeholder Styles */
+.who-section input::placeholder, 
+.who-section textarea::placeholder {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: 300; /* Light weight for Helvetica Light */
+    color: #999999;
+}
+
+/* Updated Button Styles */
+.who-section button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px; /* Rounded rectangle */
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    font-size: 1.3rem;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: 300; /* Light weight for Helvetica Light */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Removed background-image properties */
+}
+
+.who-section button:hover {
+    background-color: #333333; /* Dark gray on hover */
+}
+
+}
+
+/* Removed duplicate content before the button text */
+.who-section button::before {
+    content: none;
+}
+
+.placeholder-text {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #555555;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Bottom Section Overlay */
+.who-section .bottom-section-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1; /* Adjust z-index if necessary */
+}
+
+.who-section .bottom-section-overlay img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

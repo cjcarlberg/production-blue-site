@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Blue | Masters of Make Believe</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/3.3.0/ScrollTrigger.min.js" defer></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <img src="assets/images/ProdBlue_Logo_2024.svg" alt="Production Blue" class="logo">
+            </div>
+            <div class="hero-video">
+                <video autoplay loop muted>
+                    <source src="assets/videos/hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- White Top and Bottom Overlays -->
+                <img src="assets/images/white-top.svg" class="section-overlay top-section-overlay" alt="Top Overlay">
+                <img src="assets/images/white-bottom.svg" class="section-overlay bottom-section-overlay" alt="Bottom Overlay">
+                <!-- Hero Text -->
+                <div class="hero-text">
+                    <h1>We are masters of make believe</h1>
+                    <p>More efficient. Higher speed. Less noise. Fewer parts.</p>
+                </div>
+            </div>
+            <!-- Floating Blob Menu -->
+            <nav class="blob-menu">
+                <div class="blob-item blob-why" data-section="why" aria-label="Why Section">
+                    <img src="assets/images/why.png" alt="Why">
+                </div>
+                <div class="blob-item blob-what" data-section="what" aria-label="What Section">
+                    <img src="assets/images/what.png" alt="What">
+                </div>
+                <div class="blob-item blob-how" data-section="how" aria-label="How Section">
+                    <img src="assets/images/how.png" alt="How">
+                </div>
+                <div class="blob-item blob-who" data-section="who" aria-label="Who Section">
+                    <img src="assets/images/who.png" alt="Who">
+                </div>
+                <div class="blob-item blob-where" data-section="where" aria-label="Where Section">
+                    <img src="assets/images/where.png" alt="Where">
+                </div>
+            </nav>
+        </header>
+
+        <!-- Why Section -->
+        <section id="why" class="why-section">
+            <!-- Blue Background -->
+            <div class="blue-background"></div>
+            <!-- White Top Overlay -->
+            <img src="assets/images/white-top.svg" class="section-overlay top-section-overlay" alt="Section Top Overlay">
+            <div class="why-content">
+                <div class="why-left">
+                    <h2>Why?</h2>
+                </div>
+                <div class="why-right">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at elit euismod, hendrerit nisl ut, gravida sapien.</p>
+                    <p>Vivamus non lorem vitae urna dignissim scelerisque. Aenean ac semper nisl, sit amet vehicula tortor.</p>
+                    <p>Nulla facilisi. Proin ac lacus et lectus ultrices ullamcorper. Duis vitae semper magna.</p>
+                </div>
+            </div>
+            <!-- Black Bottom Overlay -->
+            <img src="assets/images/black-bottom.svg" class="section-overlay bottom-section-overlay" alt="Section Bottom Overlay">
+        </section>
+
+        <!-- What Section -->
+        <section id="what" class="what-section">
+            <!-- Top Overlay -->
+            <img src="assets/images/black-top.svg" class="section-overlay top-section-overlay" alt="Section Top Overlay">
+            <h2>Our Work</h2>
+            <div class="work-grid">
+                <!-- Project 1 -->
+                <div class="work-item work-item-small">
+                    <div class="blob-video">
+                        <div style="padding:56.25% 0 0 0; position:relative;">
+                            <iframe src="https://player.vimeo.com/video/654564405?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                                    style="position:absolute; top:0; left:0; width:100%; height:100%;" 
+                                    title="12 ACES 'Out for a Minute'">
+                            </iframe>
+                        </div>
+                    </div>
+                    <h3>Out for a Minute</h3>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+                <!-- Project 2 -->
+                <div class="work-item work-item-large" data-video="project-2-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 2">
+                    </div>
+                    <h3>Project Title 2</h3>
+                </div>
+                <!-- Project 3 -->
+                <div class="work-item work-item-medium" data-video="project-3-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 3">
+                    </div>
+                    <h3>Project Title 3</h3>
+                </div>
+                <!-- Project 4 -->
+                <div class="work-item work-item-small" data-video="project-4-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 4">
+                    </div>
+                    <h3>Project Title 4</h3>
+                </div>
+                <!-- Project 5 -->
+                <div class="work-item work-item-large" data-video="project-5-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 5">
+                    </div>
+                    <h3>Project Title 5</h3>
+                </div>
+                <!-- Project 6 -->
+                <div class="work-item work-item-medium" data-video="project-6-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 6">
+                    </div>
+                    <h3>Project Title 6</h3>
+                </div>
+                <!-- Project 7 -->
+                <div class="work-item work-item-small" data-video="project-7-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 7">
+                    </div>
+                    <h3>Project Title 7</h3>
+                </div>
+                <!-- Project 8 -->
+                <div class="work-item work-item-large" data-video="project-8-video.mp4">
+                    <div class="blob-video">
+                        <img src="assets/images/what.png" alt="Work Video 8">
+                    </div>
+                    <h3>Project Title 8</h3>
+                </div>
+            </div>
+            <!-- Bottom Overlay -->
+            <img src="assets/images/black-bottom.svg" class="section-overlay bottom-section-overlay" alt="Section Bottom Overlay">
+        </section>
+
+        <!-- How Section -->
+        <section id="how" class="how-section">
+            <!-- Black Top Overlay -->
+            <img src="assets/images/black-top.svg" class="section-overlay top-section-overlay" alt="Section Top Overlay">
+            <div class="how-content">
+                <div class="how-left">
+                    <h2>How?</h2>
+                </div>
+                <div class="how-right">
+                    <p>Our process combines creativity with cutting-edge technology. We utilize state-of-the-art equipment and innovative techniques to bring your vision to life.</p>
+                    <p>From pre-production planning to final delivery, we ensure every step of the process is executed with precision and artistry.</p>
+                </div>
+            </div>
+            <!-- White Bottom Overlay -->
+            <img src="assets/images/white-bottom.svg" class="section-overlay bottom-section-overlay" alt="Section Bottom Overlay">
+        </section>
+
+        <!-- Who Section -->
+        <section id="who" class="who-section">
+            <!-- Black Bottom Overlay on Right Half -->
+            <img src="assets/images/black-bottom.svg" class="section-overlay bottom-section-overlay" alt="Section Bottom Overlay">
+            <div class="who-content">
+                <div class="who-left">
+                    <h2>Who?</h2>
+                    <p>We are a team of passionate creatives and technical experts dedicated to pushing the boundaries of visual storytelling.</p>
+                    <img src="assets/images/how-3.png" alt="Production Blue Team" class="section-image">
+                </div>
+                <div class="who-right">
+                    <form action="mailto:chad@productionblue.com" method="post" enctype="text/plain">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where Section -->
+        <section id="where" class="where-section">
+            <!-- Black Top Overlay -->
+            <img src="assets/images/black-top.svg" class="section-overlay top-section-overlay" alt="Section Top Overlay">
+            <h2>Where</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at elit euismod, hendrerit nisl ut, gravida sapien.</p>
+            <!-- Black Bottom Overlay -->
+            <img src="assets/images/black-bottom.svg" class="section-overlay bottom-section-overlay" alt="Section Bottom Overlay">
+        </section>
+    </div>
+
+    <!-- Video Overlay -->
+    <div class="video-overlay" id="videoOverlay">
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="close-video" id="closeVideoButton">&#10006;</button>
+            <button class="play-pause-video" id="playPauseButton">&#9658;</button>
+        </div>
+    </div>
+</body>
+</html>
